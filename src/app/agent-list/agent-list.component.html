@@ -1,0 +1,23 @@
+
+<div id="header" class="container">
+<div class="row">
+    <div class="col-sm-8"><h2>{{tableTitle}}</h2></div>
+    <div class="col-sm-4"><label>Search For Agent</label><input type=text [(ngModel)]="agentSearch"></div>
+</div>
+</div>
+
+
+<div id="body" class="container">
+    <div class="row">
+        <div class="col-3" *ngFor="let agent of filteredAgents">
+            <div id="cardy" class="card border-secondary" style="width: 18rem;">
+                <img class="card-img-top" [src]="agent.agentCard" alt="Card image cap" [routerLink]="['/agents', agent.agentName]">
+                <div class="card-body">
+                    <h5 class="card-title">{{agent.agentName}} <span>{{agent.agentRole}}</span></h5>
+                    <p class="card-text">{{agent.summary}}</p>
+                    <a [routerLink]="['/agents', agent.agentName]" class="btn btn-danger">Agent Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

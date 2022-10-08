@@ -1,0 +1,33 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+img {
+    border-radius: 20px;
+    box-shadow: 6px 6px 28px 4px rgba(247,237,237,0.22);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Gemunu Libre';
+    margin-top: 10px;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+span {
+    margin-right: 20px;
+}
+
+#mass {
+    margin-top: 30px;
+}
+
+#bot {
+    margin-top: 15px;
+}

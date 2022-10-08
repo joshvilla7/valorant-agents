@@ -1,0 +1,51 @@
+
+input {
+    width: 200px;
+    margin-left: 10px;
+}
+
+
+.container {
+    margin-top: 15px;
+}
+
+.card {
+    margin-bottom: 15px;
+    background-image: url('https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/151516766/original/8a39eb87560715d09d8574caca74fd63f870eace/sell-custom-valorant-stinger-transition.png');
+    box-shadow: 6px 6px 28px 4px rgba(199,49,49,0.49);
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+span {
+    margin-left: 27px;
+    padding-left: 20px;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 17px;
+}
+
+h2 {
+    font-family: 'Gemunu Libre';
+    font-size: 45px;
+    color: rgb(220, 29, 29);
+}
+
+label {
+    font-family: 'Gemunu Libre';
+    font-size: 30px;
+    margin-right: 5px;
+    color: #ececec;
+}
+
+
+.card-body {
+    color: #ececec;
+}
+
+a:hover {
+    color: crimson;
+    background-color: rgb(22, 22, 22);
+}

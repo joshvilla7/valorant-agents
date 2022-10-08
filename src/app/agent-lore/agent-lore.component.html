@@ -1,0 +1,16 @@
+<div class="container">
+<div id="mass" class="jumbotron text-white">
+  <a (click)="goBack()" class="btn btn-danger"><i class="fa fa-chevron-left">Back to Agents</i></a>
+  <h1 class="display-4">Meet {{agent?.agentName}}</h1>
+  <h3>Their Role is a {{agent?.agentRole}}</h3>
+  <img [src]="agent?.imageUrl" alt="agent picture" style="width: 700px;">
+  <p class="lead">{{agent?.lore}}</p>
+  <hr class="my-3">
+  <h4><span>Abilities:</span> {{agent?.abilities}}</h4>
+  <p class="lead">
+    <a id="bot" (click)="goBack()" class="btn btn-danger"><i class="fa fa-chevron-left">Back to Agents</i></a>
+    </p>
+</div>
+</div>
+
+<!-- <a (click)="goBack()" class="btn btn-danger"><i class="fa fa-chevron-left">Back to Agents</i></a> -->

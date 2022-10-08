@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Gemunu Libre';
+    word-spacing: 4px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.description {
+    font-size: 17px;
+    width: 900px;
+}
+
+a {
+    padding: 4px 20px 4px 20px;
+    
+}
+
+.wrapper {
+    background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltbded518020183769/5eb26f5389bac8148a8006cc/agent-background-generic.JPG');
+    background-position: left -220px bottom -235px;
+}
