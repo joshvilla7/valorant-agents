@@ -9,21 +9,9 @@ https://user-images.githubusercontent.com/108959141/194681560-caa26560-30e1-40f2
 
 This Valorant Agent Guide was created using Angular. One of the first Angular applications I've ever created, which took about a week to create. In this app, users should be able to navigate through the agents list and click on the agent card image or details to get more details of a particular agent. Users can also filter agents by name with the provided search bar. Valorant is one of the fastest growing E-Sports games in the world, and what makes the game so unique is the agents and their backstory and abilities. 
 
-### Screenshot
+### Live Site
 
-This is a screenshot of my app, and all the different components. 
-
-![](./src/assets/images/home.png)
-
-![](./src/assets/images/list.png)
-
-![](./src/assets/images/list2.png)
-
-![](./src/assets/images/filtered.png)
-
-![](./src/assets/images/lore.png)
-
-![](./src/assets/images/lore2.png)
+https://candid-shortbread-aa260c.netlify.app/agents
 
 
 ### Built with
