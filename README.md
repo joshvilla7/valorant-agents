@@ -15,6 +15,15 @@ ATTENTION: A Page Not Found error will come up when clicking the link, just clic
 https://candid-shortbread-aa260c.netlify.app/agents
 
 
+## Screen Shots
+
+![](./src/assets/images/home.png)
+
+![](./src/assets/images/list2.png)
+
+![](./src/assets/images/lore2.png)
+
+
 ### Built with
 
 - Semantic HTML5 markup
