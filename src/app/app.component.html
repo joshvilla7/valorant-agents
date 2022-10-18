@@ -1,6 +1,5 @@
-<!-- <h1>{{pageTitle}}</h1> -->
-<!-- <app-agent-list></app-agent-list> -->
-<router-outlet></router-outlet>
-
+<div [@routerTransition]="j.isActivated ? j.activatedRoute : ''">
+<router-outlet #j="outlet"></router-outlet>
+</div>
 
 

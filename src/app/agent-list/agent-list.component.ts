@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AgentService } from '../agent.service';
 import { AgentInterface } from './agent';
@@ -24,16 +25,22 @@ export class AgentListComponent implements OnInit, OnDestroy {
     this.filteredAgents = this.findAgent(value);
   }
   
-  agents: AgentInterface[] = [];
+  agents!: AgentInterface[];
 
-  constructor(private agentService: AgentService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.subbing = this.agentService.getAgents().subscribe({
-      next: agents => {this.agents = agents;
-        this.filteredAgents = this.agents;
-      },
+    //prefetch data with resolver service so that agents data loads 
+    //before navigating to agents route.
+    this.subbing = this.route.data.subscribe((res: any) => {
+      this.agents = res.agents;
+      this.filteredAgents = this.agents;
     });
+    // this.subbing = this.agentService.getAgents().subscribe({
+    //   next: agents => {this.agents = agents;
+    //     this.filteredAgents = this.agents;
+    //   },
+    // });
   }
 
   ngOnDestroy(): void {
