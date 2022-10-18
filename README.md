@@ -11,7 +11,6 @@ This Valorant Agent Guide was created using Angular. One of the first Angular ap
 
 ### Live Site
 
-ATTENTION: A Page Not Found error will come up when clicking the link, just click 'Back to our site' to take you to the actual application page. 
 https://dynamic-salamander-855ba8.netlify.app/
 
 
