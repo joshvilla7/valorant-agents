@@ -16,13 +16,13 @@ export class AgentService {
     return this.http.get<AgentInterface[]>(this.agentDB);
   }
 
-  //to get a single agent 
+  // to get a single agent 
   getAgent(name: string): Observable<AgentInterface | undefined> {
     return this.getAgents()
     .pipe(
       map((agents: AgentInterface[]) => agents.find(a => a.agentName === name))
     );
   }
-
-
+  
+  
 }

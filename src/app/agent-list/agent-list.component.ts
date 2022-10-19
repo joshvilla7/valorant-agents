@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AgentService } from '../agent.service';
 import { AgentInterface } from './agent';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-agent-list',
@@ -27,7 +29,7 @@ export class AgentListComponent implements OnInit, OnDestroy {
   
   agents!: AgentInterface[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
     //prefetch data with resolver service so that agents data loads 
@@ -36,6 +38,7 @@ export class AgentListComponent implements OnInit, OnDestroy {
       this.agents = res.agents;
       this.filteredAgents = this.agents;
     });
+    // OLD --------------------------------------
     // this.subbing = this.agentService.getAgents().subscribe({
     //   next: agents => {this.agents = agents;
     //     this.filteredAgents = this.agents;
@@ -53,5 +56,13 @@ export class AgentListComponent implements OnInit, OnDestroy {
     agent.agentName.toLocaleLowerCase().includes(findBy));
   }
 
+  // Technique to use async pipe w/o subscribing, but agent details disappear when clicked
+  // agentDB = 'api/agents/agents.json';
+  // users$: Observable<any> | undefined;
+  // fetchAgents() {
+  //   this.users$ = this.http
+  //   .get<any>(this.agentDB)
+  //   .pipe(map((results) => results))
+  // }
 
 }

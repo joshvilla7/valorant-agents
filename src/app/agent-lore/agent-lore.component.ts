@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AgentService } from '../agent.service';
 import { AgentInterface } from '../agent-list/agent';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-agent-lore',
@@ -12,7 +13,7 @@ export class AgentLoreComponent implements OnInit {
 
   loreTitle: string = 'Meet';
   agent: AgentInterface | undefined;
-
+ 
   constructor(
     private route: ActivatedRoute,
     private agentService: AgentService,
@@ -23,7 +24,7 @@ export class AgentLoreComponent implements OnInit {
      if (name) {
       this.getAgent(name);
      }
-  }
+   }
 
   goBack(): void {
     this.router.navigate(['/agents']);
@@ -35,4 +36,4 @@ export class AgentLoreComponent implements OnInit {
     });
   }
 
-}
+ }
