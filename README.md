@@ -33,17 +33,17 @@ https://dynamic-salamander-855ba8.netlify.app/
 
 ### What I learned
 
-I learned so much creating this project.. I spent maybe 50+ hours creating project, and there was not a day where I didn't enjoy what I was doing. A few things I learned was creating my own 'database' (which probably took the longest), making HTTP requests to that database, and how to route to the different components of this web app. There's too many things to name, but I feel a lot more comfortable with Angular but I also know I still have so much to learn!  
+I learned so much creating this project.. I spent around 50+ hours creating project, and there was not a day where I didn't enjoy what I was doing. A few things I learned was creating my own 'database' (which probably took the longest), making HTTP requests to that database, and how to route to the different components of this web app. Advanced concepts of reactive programming with RxJS. There's too many things to name, but I feel a lot more comfortable with Angular but I also know I still have so much to learn!  
 
 ### Continued development
 
-If you have any suggestions, please feel free to reach out to me on what improvements I can make.
+If you have any suggestions, please feel free to reach out to me on what improvements I can make. Continuing to learn the ins and outs of Angular, and added some reactive programming concepts using RxJS. 
 
 ### Useful resources
 
 - [Boostrap Documentation](https://getbootstrap.com) - Read and used the Bootstrap documentation.
 - [StackOverflow](https://www.stackoverflow.com) - Used this resource for a few questions.
-- [Angular Documentation](https://angular.io/docs) - Relied heavily on the Angular documentation to build this app.
+- [Angular Documentation](https://angular.io/docs) - Relied on the Angular documentation to build this app.
 
 
 ## Author
