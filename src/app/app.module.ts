@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgentLoreComponent } from './agent-lore/agent-lore.component';
 import { RouterModule } from '@angular/router';
 import { GreetingComponent } from './greeting/greeting.component';
-import { AgentResolverService } from './agent-resolver.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -26,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([
       { path: '', redirectTo: 'greeting', pathMatch: 'full' },
       { path: 'greeting', component: GreetingComponent},
-      { path: 'agents', component: AgentListComponent, resolve: { agents: AgentResolverService } },
+      { path: 'agents', component: AgentListComponent }, 
       { path: 'agents/:name', component: AgentLoreComponent },
       { path: '**', redirectTo: 'agents', pathMatch: 'full' }
     ])

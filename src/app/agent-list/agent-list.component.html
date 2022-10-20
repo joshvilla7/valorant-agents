@@ -6,10 +6,10 @@
 </div>
 </div>
 
-
+<!-- Now using async pipe to load agent list-->
 <div id="body" class="container">
     <div class="row">
-        <div class="col-3" *ngFor="let agent of filteredAgents">
+        <div class="col-3" *ngFor="let agent of agents$ |async">
             <div id="cardy" class="card border-secondary" style="width: 18rem;">
                 <img class="card-img-top" [src]="agent.agentCard" alt="Card image cap" [routerLink]="['/agents', agent.agentName]">
                 <div class="card-body">

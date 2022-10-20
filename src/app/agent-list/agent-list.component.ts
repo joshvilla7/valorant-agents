@@ -1,22 +1,18 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { AgentService } from '../agent.service';
 import { AgentInterface } from './agent';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-agent-list',
   templateUrl: './agent-list.component.html',
   styleUrls: ['./agent-list.component.css']
 })
-export class AgentListComponent implements OnInit, OnDestroy {
+export class AgentListComponent {
 
   tableTitle: string = 'Meet The Agents';
   filteredAgents: AgentInterface[] = [];
-  subbing!: Subscription;
-
+  agents!: AgentInterface[];
+  // For Search Bar
   private _agentSearch: string = '';
   get agentSearch(): string {
     return this._agentSearch;
@@ -27,28 +23,8 @@ export class AgentListComponent implements OnInit, OnDestroy {
     this.filteredAgents = this.findAgent(value);
   }
   
-  agents!: AgentInterface[];
-
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
-
-  ngOnInit(): void {
-    //prefetch data with resolver service so that agents data loads 
-    //before navigating to agents route.
-    this.subbing = this.route.data.subscribe((res: any) => {
-      this.agents = res.agents;
-      this.filteredAgents = this.agents;
-    });
-    // OLD --------------------------------------
-    // this.subbing = this.agentService.getAgents().subscribe({
-    //   next: agents => {this.agents = agents;
-    //     this.filteredAgents = this.agents;
-    //   },
-    // });
-  }
-
-  ngOnDestroy(): void {
-    this.subbing.unsubscribe();
-  }
+  
+  constructor(private agentService: AgentService) { }
 
   findAgent(findBy: string): AgentInterface[] {
     findBy = findBy.toLocaleLowerCase();
@@ -56,13 +32,42 @@ export class AgentListComponent implements OnInit, OnDestroy {
     agent.agentName.toLocaleLowerCase().includes(findBy));
   }
 
-  // Technique to use async pipe w/o subscribing, but agent details disappear when clicked
-  // agentDB = 'api/agents/agents.json';
-  // users$: Observable<any> | undefined;
-  // fetchAgents() {
+  agents$ = this.agentService.agents$;
+
+  
+  // OLD CODE without Reactive RxJS and async pipe technique
+  // --------------------------------------------------------------------------
+  // ngOnInit(): void {
+  //   //prefetch data with resolver service so that agents data loads 
+  //   //before navigating to agents route.
+  //   this.subbing = this.route.data.subscribe((res: any) => {
+  //     this.agents = res.agents;
+  //     this.filteredAgents = this.agents;
+  //   });
+    // OLD --------------------------------------
+    // this.subbing = this.agentService.getAgents().subscribe({
+    //   next: agents => {this.agents = agents;
+    //     this.filteredAgents = this.agents;
+    //   },
+    // });
+  // }
+
+  // ngOnDestroy(): void {
+  //   this.subbing.unsubscribe();
+  // }
+  // subbing!: Subscription;
+  
+  // Technique to use async pipe w/o subscribing, but agent details disappear when clicked 
+  // in service change getAgents() to a variable: 
+  //  agents$: Observable<AgentInterface[]> = this.http.get<AgentInterface[]>(this.agentDB)
+
+  // fetchAgent() {
   //   this.users$ = this.http
   //   .get<any>(this.agentDB)
   //   .pipe(map((results) => results))
   // }
+  //agents$: Observable<AgentInterface[]> | undefined;
+  //import agentService
+  //OnInit() {this.agents$ = this.agentService.getAgents();}
 
 }
