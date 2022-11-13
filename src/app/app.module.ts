@@ -8,6 +8,12 @@ import { AgentLoreComponent } from './agent-lore/agent-lore.component';
 import { RouterModule } from '@angular/router';
 import { GreetingComponent } from './greeting/greeting.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { agentReducer } from './state/agents/agents.reducer';
+import { AgentEffects } from './state/agents/agents.effects';
 
 
 @NgModule({
@@ -28,7 +34,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: 'agents', component: AgentListComponent }, 
       { path: 'agents/:name', component: AgentLoreComponent },
       { path: '**', redirectTo: 'agents', pathMatch: 'full' }
-    ])
+    ]),
+    StoreModule.forRoot({agents: agentReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([AgentEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
